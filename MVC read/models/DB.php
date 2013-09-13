@@ -5,7 +5,7 @@ class DB{
 		//create new PDO connection, var_dump if fails
 		try {
 
-			$dsn	 = "mysql:dbname=bdf1309;host=127.0.0.1";
+			$dsn	 = "mysql:dbname=bdf1309;host=127.0.0.1:3306";
 			$db_user = "root";
 			$db_pass = "andreana21";
 

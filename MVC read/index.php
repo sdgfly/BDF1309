@@ -3,12 +3,12 @@
 <?php
 // index page
 include 'models/viewModel.php';
-include 'models/contactsModel.php';
+include 'models/opinionModel.php';
 
 $pagename = 'index';
 
 $views = new viewModel();
-$contacts = new contactsModel();
+$opinion = new opinionModel();
 
 //Show header here
 //maybe with buttons
@@ -19,19 +19,19 @@ if(!empty($_GET["action"])){
 
 	if ($_GET["action"] == "home") {
 		
-		$result = $contacts->getAll();
+		$result = $opinion->getAll();
 		$views->getView("views/body.php", $result);
 
 	}if ($_GET["action"] == "details") {
 
-		$result = $contacts->getOne($_GET["id"]);
+		$result = $opinion->getOne($_GET["id"]);
 		$views->getView("views/details.php", $result);
 
 	}
 
 }else{
 
-	$result = $contacts->getAll();
+	$result = $opinion->getAll();
 	$views->getView("views/body.php",$result);
 
 }
